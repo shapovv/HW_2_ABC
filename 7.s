@@ -131,13 +131,13 @@ change:
 	.size	change, .-change
 	.section	.rodata
 .LC0:
-	.string	"incorrect input"
+	.string	"Incorrect input!"
 .LC1:
 	.string	"r"
 .LC2:
 	.string	"w"
 .LC3:
-	.string	"incorrect file"
+	.string	"Incorrect file!"
 	.text
 	.globl	main
 	.type	main, @function
