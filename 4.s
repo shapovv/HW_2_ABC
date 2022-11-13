@@ -12,11 +12,11 @@ get_string:
 	.cfi_def_cfa_register 6
 	subq	$32, %rsp
 	movq	%rdi, -24(%rbp)		#go to func int *len
-	movq	%rsi, -32(%rbp)		#go to func int *test
+	movq	%rsi, -32(%rbp)		#go to func int *check
 	movq	-24(%rbp), %rax
 	movl	$0, (%rax)		#*len = 0
 	movq	-32(%rbp), %rax
-	movl	$0, (%rax)		#*test = 0
+	movl	$0, (%rax)		#*check = 0
 	movl	$1, -12(%rbp)
 	movl	$1, %edi		#capacit = 1
 	call	malloc@PLT		
@@ -86,7 +86,7 @@ main:
 	movq	%fs:40, %rax
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
-	leaq	-28(%rbp), %rdx		#test
+	leaq	-28(%rbp), %rdx		#check
 	leaq	-32(%rbp), %rax		#len
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
