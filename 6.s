@@ -16,11 +16,11 @@ get_string:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	movq	%rdi, %r12		#go to func int *len
-	movq	%rsi, %r15		#go to func int *test
+	movq	%rsi, %r15		#go to func int *check
 	movq	%r12, %rax
 	movl	$0, (%rax)		#*len = 0
 	movq	%r15, %rax
-	movl	$0, (%rax)		#*test = 0
+	movl	$0, (%rax)		#*check = 0
 	movq	$1, %r13
 	movl	$1, %edi		#capacit = 1
 	call	malloc@PLT
@@ -165,7 +165,7 @@ main:
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
 	leaq	-20(%rbp), %rdx		#len to get_string
-	leaq	-24(%rbp), %rax		#test to get_string
+	leaq	-24(%rbp), %rax		#check to get_string
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
 	call	get_string
