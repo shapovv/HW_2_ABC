@@ -85,7 +85,7 @@ main:
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
 	leaq	-20(%rbp), %rdx		#len to get_string
-	leaq	-24(%rbp), %rax		#test to get_string
+	leaq	-24(%rbp), %rax		#check to get_string
 	movq	%rdx, %rsi
 	movq	%rax, %rdi
 	call	get_string
