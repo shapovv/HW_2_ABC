@@ -7,7 +7,7 @@ get_string:
 	.cfi_startproc
 	pushq	%rbp
 	pushq	%rbx 			#char c
-	pushq	%r15			#*test
+	pushq	%r15			#*check
 	pushq	%r14			#char *s
 	pushq	%r13			#capacit 
 	pushq	%r12			#*len
@@ -16,11 +16,11 @@ get_string:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	movq	%rdi, %r12		#go to func int *len
-	movq	%rsi, %r15		#go to func int *test
+	movq	%rsi, %r15		#go to func int *check
 	movq	%r12, %rax
 	movl	$0, (%rax)		#*len = 0
 	movq	%r15, %rax
-	movl	$0, (%rax)		#*test = 0
+	movl	$0, (%rax)		#*check = 0
 	movq	$1, %r13
 	movl	$1, %edi		#capacit = 1
 	call	malloc@PLT
